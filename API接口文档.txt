@@ -1,0 +1,137 @@
+[ 个人中心 ]
+
+用户登录接口 && 验证是否登录
+地址：/personal/login
+方式：POST
+参数：name=xxx&password=xxx
+返回：{
+   code:0,  //=>0 登录成功   1 登录失败
+   msg:'xxx'
+}
+
+方式：GET
+参数：--
+返回：{
+   code:0,  //=>0 已登录   1 未登录
+   msg:'xxx'
+}
+用户注册接口
+地址：/personal/register
+方式：POST
+参数：name=xxx&password=xxx&phone=xxx&email=xxx
+返回：{
+   code:0,  //=>0 注册成功   1 失败
+   msg:'xxx'
+}
+获取个人信息
+地址：/personal/info
+方式：GET
+参数：--
+返回：{
+   code:0  //=>0 成功  1=>失败
+   mag:'xxx',
+   data:{
+       id,
+       name,
+       email,
+       phone
+   }
+}
+[ 购买中心 ]
+
+加入购物车
+地址：/store/add
+方式：POST
+参数：courseID=xxx
+返回：{
+   code:0,
+   msg:'xxx'
+}
+从购物车删除
+地址：/store/remove
+方式：POST
+参数：courseID=xxx
+返回：{
+   code:0,
+   msg:'xxx'
+}
+获取购物信息
+地址：/store/info
+方式：GET
+参数：state=0/1/2
+返回：{
+   code:0,
+   msg:'xxx',
+   data:[
+       {
+        "id": 999,
+        "name": "柴犬(犬科犬属动物)",
+        "pic": "...",
+        "date": "2018-01-01",
+        "address": "宠物商城",
+        "time": "1小时",
+        "dec": "...",
+        "price": 3000,
+        "type": "dog"
+       },
+       ...
+   ]
+}
+支付
+地址：/store/pay
+方式：POST
+参数：storeID=xxx
+返回：{
+   code:0,
+   msg:'xxx'
+}
+[ 首页 ]
+
+轮播图
+地址：/pet/banner
+方式：GET
+参数：--
+返回：{
+   code:0,
+   msg:'xxx',
+   data:[
+       {
+        "id": 999,
+        "name": "柴犬(犬科犬属动物)",
+        "pic": "...",
+        "date": "2020-04-01",
+        "address": "宠物商城",
+        "time": "1小时",
+        "dec": "...",
+        "price": 3000,
+        "type": "dog"
+       },
+       ...
+   ]
+}
+宠物详情
+地址：/pet/info
+方式：GET
+参数：petID=xxx
+返回：{
+   code:0,
+   msg:'xxx',
+   data:{
+      ...
+   }
+}
+课程列表
+地址：/pet/list
+方式：GET
+参数：limit=10&page=1&type=all
+返回：{
+    code:0,
+    msg:'xxx',
+    total:100,
+    limit:10,
+    page:1,
+    data:[
+      {...},
+      ...
+    ]
+}
