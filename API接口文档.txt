@@ -42,7 +42,7 @@
 加入购物车
 地址：/store/add
 方式：POST
-参数：courseID=xxx
+参数：petID=xxx
 返回：{
    code:0,
    msg:'xxx'
@@ -50,7 +50,7 @@
 从购物车删除
 地址：/store/remove
 方式：POST
-参数：courseID=xxx
+参数：petID=xxx
 返回：{
    code:0,
    msg:'xxx'

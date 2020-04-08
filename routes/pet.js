@@ -3,7 +3,6 @@ const express = require('express'),
 
 route.get('/banner', (req, res) => {
     //=>我就是把所有宠物中的最后三条数据做为轮播图展示
-    console.log(req.petDATA)
     let data = req.petDATA.reverse().slice(0, 3);
     res.send({
         code: 0,
@@ -14,10 +13,10 @@ route.get('/banner', (req, res) => {
 
 route.get('/info', (req, res) => {
     //=>客户端会传一个课程ID进来，我们在所有课程中找到和ID相同的信息，返回
-    let {petID} = req.query;//=>GET请求问号传递信息都在REQ.QUERY上呢
-    petID = parseFloat(petID);
+    let {petId} = req.query;//=>GET请求问号传递信息都在REQ.QUERY上呢
+    petId = parseFloat(petId);
     let item = req.petDATA.find(item => {
-        return parseFloat(item.id) === petID;
+        return parseFloat(item.id) === petId;
     });
     if (item) {
         res.send({
